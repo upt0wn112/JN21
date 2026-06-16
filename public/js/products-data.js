@@ -44,11 +44,6 @@
     "itemNumber": "C103",
     "itemPrice": "2"
   },
-  "C103_Fire_Dragon_Hatchling_v2.jpg": {
-    "itemName": "Fire Dragon Hatchling v2",
-    "itemNumber": "C103",
-    "itemPrice": "2"
-  },
   "C103M_Fire_Dragon_Hatchling_Multi.jpg": {
     "itemName": "Fire Dragon Hatchling Multi",
     "itemNumber": "C103M",
@@ -73,6 +68,11 @@
     "itemName": "Phoenix Dragon",
     "itemNumber": "C113",
     "itemPrice": "8"
+  },
+  "C115_Dragon_Hatchling.jpg": {
+    "itemName": "Dragon Hatchling",
+    "itemNumber": "C115",
+    "itemPrice": "2"
   },
   "K001_World_Cup_Trophy_Clicker.jpg": {
     "itemName": "World Cup Trophy Clicker",
