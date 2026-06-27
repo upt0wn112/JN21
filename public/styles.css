@@ -24,7 +24,7 @@ body {
 
 .site-header {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
   padding: 30px clamp(18px, 4vw, 52px) 24px;
@@ -33,9 +33,9 @@ body {
 }
 
 .brand-lockup {
-  display: grid;
-  justify-items: start;
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 34px);
 }
 
 .brand-logo {
@@ -47,7 +47,7 @@ body {
 .eyebrow {
   margin: 0;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: clamp(0.9rem, 1.8vw, 1.25rem);
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -292,6 +292,12 @@ select:focus {
   .site-header {
     align-items: start;
     flex-direction: column;
+  }
+
+  .brand-lockup {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .site-footer {
