@@ -1,13 +1,13 @@
 :root {
-  color-scheme: light;
-  --ink: #202124;
-  --muted: #64686f;
-  --line: #d8dde3;
-  --paper: #ffffff;
-  --wash: #f4f7f8;
-  --accent: #126c74;
-  --accent-dark: #0d555b;
-  --shadow: 0 12px 34px rgba(35, 42, 50, 0.1);
+  color-scheme: dark;
+  --ink: #f8f5ef;
+  --muted: #b8b1a8;
+  --line: #263245;
+  --paper: #10151d;
+  --wash: #020407;
+  --accent: #3487f7;
+  --accent-dark: #2565c4;
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
 }
 
 * {
@@ -29,11 +29,23 @@ body {
   gap: 24px;
   padding: 30px clamp(18px, 4vw, 52px) 24px;
   border-bottom: 1px solid var(--line);
-  background: var(--paper);
+  background: #000000;
+}
+
+.brand-lockup {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: min(230px, 52vw);
+  height: auto;
+  display: block;
 }
 
 .eyebrow {
-  margin: 0 0 6px;
+  margin: 0;
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 700;
@@ -120,12 +132,12 @@ button:disabled {
   object-fit: cover;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: #e9eef1;
+  background: #090d13;
 }
 
 .price {
   margin: 0;
-  color: var(--accent-dark);
+  color: #7fb2ff;
   font-size: 1rem;
   font-weight: 800;
 }
@@ -144,7 +156,7 @@ button:disabled {
   padding: 22px clamp(18px, 4vw, 52px);
   border-top: 1px solid var(--line);
   color: var(--muted);
-  background: var(--paper);
+  background: #000000;
   font-size: 0.9rem;
   font-weight: 700;
   text-align: center;
@@ -193,8 +205,8 @@ button:disabled {
   border: 1px solid var(--accent);
   border-radius: 6px;
   padding: 10px 16px;
-  color: var(--accent);
-  background: #ffffff;
+  color: var(--ink);
+  background: #0a1018;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
@@ -247,7 +259,7 @@ input {
   border-radius: 6px;
   padding: 9px 10px;
   color: var(--ink);
-  background: #ffffff;
+  background: #060a10;
   font: inherit;
 }
 
@@ -257,7 +269,7 @@ select {
   border-radius: 6px;
   padding: 9px 34px 9px 10px;
   color: var(--ink);
-  background: #ffffff;
+  background: #060a10;
   font: inherit;
 }
 

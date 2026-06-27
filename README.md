@@ -1,6 +1,6 @@
-# JN21 Product Gallery
+# Back in Print Product Gallery
 
-A small product catalog and admin app for JN21 item photos.
+A small product catalog and admin app for Back in Print item photos.
 
 ## Update photos
 

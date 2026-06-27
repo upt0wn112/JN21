@@ -6,6 +6,7 @@ const { DatabaseSync } = require("node:sqlite");
 
 const ROOT = __dirname;
 const PHOTO_DIR = path.join(ROOT, "01_ITEM_PHOTOS");
+const LOGO_DIR = path.join(ROOT, "02_Logo");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const GENERATED_DIR = path.join(PUBLIC_DIR, "generated");
 const DATA_DIR = path.join(ROOT, "data");
@@ -348,6 +349,20 @@ function servePhoto(res, pathname) {
   fs.createReadStream(filePath).pipe(res);
 }
 
+function serveLogo(res, pathname) {
+  const filename = decodeURIComponent(pathname.slice("/logo/".length));
+  const filePath = path.normalize(path.join(LOGO_DIR, filename));
+  if (!filePath.startsWith(LOGO_DIR) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+    res.writeHead(404);
+    res.end("Not found");
+    return;
+  }
+
+  const ext = path.extname(filePath).toLowerCase();
+  res.writeHead(200, { "content-type": MIME_TYPES[ext] || "application/octet-stream" });
+  fs.createReadStream(filePath).pipe(res);
+}
+
 async function handleApi(req, res, url) {
   if (req.method === "GET" && url.pathname === "/api/products") {
     jsonResponse(res, 200, { products: products() });
@@ -388,6 +403,10 @@ async function start() {
       if (url.pathname.startsWith("/api/") && await handleApi(req, res, url)) return;
       if (url.pathname.startsWith("/photos/")) {
         servePhoto(res, url.pathname);
+        return;
+      }
+      if (url.pathname.startsWith("/logo/")) {
+        serveLogo(res, url.pathname);
         return;
       }
       serveStatic(res, url.pathname);
